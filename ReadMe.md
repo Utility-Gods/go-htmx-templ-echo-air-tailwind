@@ -1,5 +1,11 @@
-# templ generate --watch
+# get tailwindcss standalone cli
 
-# air
+# Example for macOS arm64
 
-# ./tailwindcss -i ./static/css/app.css -o ./static/dist/styles.css --watch
+curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-macos-arm64
+chmod +x tailwindcss-macos-arm64
+mv tailwindcss-macos-arm64 tailwindcss
+
+# install TASK and run
+
+# task dev

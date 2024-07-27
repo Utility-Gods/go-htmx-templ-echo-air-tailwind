@@ -1,0 +1,23 @@
+version: "3"
+
+tasks:
+  templ:
+    cmds:
+      - templ generate --watch
+    silent: true
+
+  air:
+    cmds:
+      - air
+    silent: true
+
+  tailwind:
+    cmds:
+      - ./tailwindcss -i ./static/css/app.css -o ./static/dist/styles.css --watch
+    silent: true
+
+  dev:
+    deps: [templ, air, tailwind]
+    cmds:
+      - echo "Running all tasks concurrently"
+    silent: true
