@@ -13,6 +13,7 @@ func main() {
 	e := echo.New()
 	e.Use(middleware.Logger())
 
+	e.Static("/static", "static")
 
 	handlers.SetupRoutes(e)
 	e.Logger.Fatal(e.Start(":1323"))

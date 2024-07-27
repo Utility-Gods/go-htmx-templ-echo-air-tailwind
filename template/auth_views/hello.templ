@@ -1,0 +1,20 @@
+package auth_views
+
+import "github.com/Utility-Gods/photoship-go/template/layout"
+
+templ Home(name string) {
+	<div>Hello, { name }</div>
+}
+
+templ HomeIndex(
+	title,
+	username string,
+	fromProtected bool,
+	isError bool,
+	errMsgs, sucMsgs []string,
+	cmp templ.Component,
+) {
+	@layout.Base(title, username, fromProtected, isError, errMsgs, sucMsgs) {
+		@cmp
+	}
+}
