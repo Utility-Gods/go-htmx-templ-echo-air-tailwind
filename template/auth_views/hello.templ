@@ -3,7 +3,14 @@ package auth_views
 import "github.com/Utility-Gods/photoship-go/template/layout"
 
 templ Home(name string) {
-	<div>Hello, { name }</div>
+	<div class="font-extrabold text-gray-700 tracking-widest">
+		<h1 class="text-6xl font-black text-center m-0 pb-2">PHOTOSHIP</h1>
+		<div class="flex flex-col items-center justify-center h-[100vh] gap-4">
+			<h1 class="text-9xl font-extrabold text-gray-700 tracking-widest">
+				Hello, { name }
+			</h1>
+		</div>
+	</div>
 }
 
 templ HomeIndex(
