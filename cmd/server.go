@@ -1,16 +1,18 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
-	"github.com/Utility-Gods/photoship-go/internal/app/template"
-	"github.com/a-h/templ"
+	"github.com/labstack/echo/v4"
 )
 
 func main() {
-	component := template.Home("PhotoShip")
-	http.Handle("/", templ.Handler(component))
-	fmt.Println("Listening on :3000")
-	http.ListenAndServe(":3000", nil)
+
+	// component := template.Home("PhotoShip")
+
+	e := echo.New()
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Hello, Photoship wow!")
+	})
+	e.Logger.Fatal(e.Start(":1323"))
 }
